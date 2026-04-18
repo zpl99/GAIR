@@ -35,8 +35,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--query-mode",
-        choices=["liif", "bilinear", "bicubic"],
-        default="liif",
+        choices=["nili", "bilinear", "bicubic"],
+        default="nili",
         help="Method used for localized RS querying.",
     )
     parser.add_argument("--normalize", action="store_true", help="L2-normalize all exported embeddings.")

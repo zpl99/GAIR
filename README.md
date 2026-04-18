@@ -50,7 +50,7 @@ from gair import GAIRModel, load_rs_image, load_sv_image, preprocess_rs_array, p
 checkpoint = "path/to/checkpoint-144.pth"
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
-model = GAIRModel.from_checkpoint(checkpoint, device=device, query_mode="liif")
+model = GAIRModel.from_checkpoint(checkpoint, device=device, query_mode="nili")
 
 rs = preprocess_rs_array(load_rs_image("path/to/rs_crop.tif")).to(device)
 sv = preprocess_sv_array(load_sv_image("path/to/street_view.jpg")).to(device)
@@ -65,7 +65,7 @@ with torch.inference_mode():
         rs,
         coords,
         bbox,
-        mode="liif",
+        mode="nili",
         normalize=True,
     )
 ```
@@ -80,7 +80,7 @@ python scripts/extract_embeddings.py \
   --lon 116.397 \
   --lat 39.908 \
   --rs-bbox 116.387 39.918 116.407 39.898 \
-  --query-mode liif \
+  --query-mode nili \
   --normalize \
   --output-dir outputs/demo
 ```
@@ -105,7 +105,7 @@ The script exports:
 
 ## Query Modes
 
-- `liif`: learned NILI query used by GAIR
+- `nili`: learned NILI query used by GAIR
 - `bilinear`: deterministic interpolation baseline
 - `bicubic`: deterministic interpolation baseline
 

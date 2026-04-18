@@ -112,7 +112,7 @@ class GAIRModel(nn.Module):
         queue_size: int = 4096,
         projection_input: int = DEFAULT_EMBED_DIM,
         projection_output: int = DEFAULT_EMBED_DIM,
-        query_mode: str = "liif",
+        query_mode: str = "nili",
     ) -> None:
         super().__init__()
         self.rs_input_size = rs_input_size
@@ -217,7 +217,7 @@ class GAIRModel(nn.Module):
         checkpoint: str | Path,
         *,
         device: str | torch.device = "cpu",
-        query_mode: str = "liif",
+        query_mode: str = "nili",
         rs_input_size: int = DEFAULT_RS_INPUT_SIZE,
         sv_input_size: int = DEFAULT_SV_INPUT_SIZE,
     ) -> "GAIRModel":
@@ -294,11 +294,11 @@ class GAIRModel(nn.Module):
         sv_coordinate: torch.Tensor | None = None,
         bbox_information: torch.Tensor | None = None,
     ) -> tuple[torch.Tensor, torch.Tensor]:
-        if self.query_mode == "liif":
-            return self.liif_query_embedding(rs_imgs, sv_coordinate, bbox_information)
+        if self.query_mode == "nili":
+            return self.nili_query_embedding(rs_imgs, sv_coordinate, bbox_information)
         if self.query_mode in ("bilinear", "bicubic"):
             return self.interp_query_embedding(rs_imgs, sv_coordinate, bbox_information, mode=self.query_mode)
-        raise ValueError(f"Unsupported query_mode={self.query_mode!r}. Expected one of: liif, bilinear, bicubic.")
+        raise ValueError(f"Unsupported query_mode={self.query_mode!r}. Expected one of: nili, bilinear, bicubic.")
 
     def query_localized_rs(
         self,
@@ -322,7 +322,7 @@ class GAIRModel(nn.Module):
             localized = F.normalize(localized, dim=1)
         return rs_embeddings, localized
 
-    def liif_query_embedding(
+    def nili_query_embedding(
         self,
         rs_imgs: torch.Tensor,
         sv_coordinate: torch.Tensor | None = None,
@@ -408,19 +408,19 @@ class GAIRModel(nn.Module):
         return rs_embeddings, queried_feature
 
 
-RSSV_LIIF_style = GAIRModel
+RSSV_NILI_style = GAIRModel
 
 
-def vit_base_patch16_dec512d8b_liif(**kwargs: Any) -> GAIRModel:
-    kwargs.setdefault("query_mode", "liif")
+def vit_base_patch16_dec512d8b_nili(**kwargs: Any) -> GAIRModel:
+    kwargs.setdefault("query_mode", "nili")
     return GAIRModel(**kwargs)
 
 
-def vit_base_patch16_dec512d8b_liif_bilinear(**kwargs: Any) -> GAIRModel:
+def vit_base_patch16_dec512d8b_nili_bilinear(**kwargs: Any) -> GAIRModel:
     kwargs.setdefault("query_mode", "bilinear")
     return GAIRModel(**kwargs)
 
 
-def vit_base_patch16_dec512d8b_liif_bicubic(**kwargs: Any) -> GAIRModel:
+def vit_base_patch16_dec512d8b_nili_bicubic(**kwargs: Any) -> GAIRModel:
     kwargs.setdefault("query_mode", "bicubic")
     return GAIRModel(**kwargs)

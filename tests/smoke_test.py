@@ -56,7 +56,7 @@ def main() -> None:
         rs_embedding = model.encode_rs(rs)
         sv_embedding = model.encode_sv(sv)
         loc_embedding = model.encode_location(coords)
-        rs_global_liif, localized_liif = model.query_localized_rs(rs, coords, bboxes, mode="liif")
+        rs_global_nili, localized_nili = model.query_localized_rs(rs, coords, bboxes, mode="nili")
         rs_global_bilinear, localized_bilinear = model.query_localized_rs(rs, coords, bboxes, mode="bilinear")
         rs_global_bicubic, localized_bicubic = model.query_localized_rs(rs, coords, bboxes, mode="bicubic")
 
@@ -64,8 +64,8 @@ def main() -> None:
         "rs_embedding": tuple(rs_embedding.shape),
         "sv_embedding": tuple(sv_embedding.shape),
         "loc_embedding": tuple(loc_embedding.shape),
-        "rs_global_liif": tuple(rs_global_liif.shape),
-        "localized_liif": tuple(localized_liif.shape),
+        "rs_global_nili": tuple(rs_global_nili.shape),
+        "localized_nili": tuple(localized_nili.shape),
         "rs_global_bilinear": tuple(rs_global_bilinear.shape),
         "localized_bilinear": tuple(localized_bilinear.shape),
         "rs_global_bicubic": tuple(rs_global_bicubic.shape),
@@ -76,7 +76,7 @@ def main() -> None:
         ("rs_embedding", rs_embedding),
         ("sv_embedding", sv_embedding),
         ("loc_embedding", loc_embedding),
-        ("localized_liif", localized_liif),
+        ("localized_nili", localized_nili),
         ("localized_bilinear", localized_bilinear),
         ("localized_bicubic", localized_bicubic),
     ]:
