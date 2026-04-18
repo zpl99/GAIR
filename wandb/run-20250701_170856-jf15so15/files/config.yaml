@@ -1,0 +1,114 @@
+_wandb:
+    value:
+        cli_version: 0.18.1
+        m: []
+        python_version: 3.11.9
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 55
+                - 63
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 55
+                - 63
+            "3":
+                - 1
+                - 23
+                - 55
+            "4": 3.11.9
+            "5": 0.18.1
+            "6": 4.45.1
+            "8":
+                - 5
+            "12": 0.18.1
+            "13": linux-x86_64
+accum_iter:
+    value: 96
+batch_size:
+    value: 256
+blr:
+    value: 1.5e-06
+dataset_type:
+    value: sentinel_sv_inf
+device:
+    value: cuda
+dist_on_itp:
+    value: false
+dist_url:
+    value: env://
+distributed:
+    value: false
+dropped_bands:
+    value:
+        - 0
+        - 9
+        - 10
+epochs:
+    value: 300
+freeze_sat_encoder:
+    value: true
+grouped_bands:
+    value: []
+imagenet_initialized:
+    value: false
+input_size:
+    value: 96
+input_sv_size:
+    value: 224
+len_sv:
+    value: 32
+local_rank:
+    value: 0
+log_dir:
+    value: .\log
+lr:
+    value: 0.000144
+mask_ratio:
+    value: 0.75
+masked_bands:
+    value: null
+min_lr:
+    value: 1e-14
+model:
+    value: vit_base_patch16_dec512d8b_liif
+model_type:
+    value: sat_sv_inf
+norm_pix_loss:
+    value: false
+num_workers:
+    value: 32
+output_dir:
+    value: ""
+patch_size:
+    value: 8
+pin_mem:
+    value: true
+pretrained_sat_encoder:
+    value: /satmae_pretrained_checkpoint/pretrain-vit-base-e199.pth
+repeat:
+    value: 2
+resume:
+    value: ""
+seed:
+    value: 0
+spatial_mask:
+    value: true
+start_epoch:
+    value: 0
+train_path:
+    value: /home/train_62classes.csv
+wandb:
+    value: sat_sv
+warmup_epochs:
+    value: 10
+weight_decay:
+    value: 0.05
+world_size:
+    value: 1

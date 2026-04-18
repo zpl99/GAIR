@@ -1,0 +1,27 @@
+2025-07-01 17:58:07,874 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Current SDK version is 0.18.1
+2025-07-01 17:58:07,874 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Configure stats pid to 1161562
+2025-07-01 17:58:07,874 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Loading settings from /home/zl22853/.config/wandb/settings
+2025-07-01 17:58:07,874 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Loading settings from /home/zl22853/code/GAIR/wandb/settings
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Loading settings from environment variables: {}
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Applying setup settings: {'mode': None, '_disable_service': None}
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Inferring run settings from compute environment: {'program_relpath': 'main_pretrain.py', 'program_abspath': '/home/zl22853/code/GAIR/main_pretrain.py', 'program': '/home/zl22853/code/GAIR/main_pretrain.py'}
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_setup.py:_flush():77] Applying login settings: {}
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_init.py:_log_setup():532] Logging user logs to /home/zl22853/code/GAIR/wandb/run-20250701_175807-fy75s220/logs/debug.log
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_init.py:_log_setup():533] Logging internal logs to /home/zl22853/code/GAIR/wandb/run-20250701_175807-fy75s220/logs/debug-internal.log
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_init.py:init():616] calling init triggers
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_init.py:init():623] wandb.init called with sweep_config: {}
+config: {}
+2025-07-01 17:58:07,875 INFO    MainThread:1161562 [wandb_init.py:init():666] starting backend
+2025-07-01 17:58:07,876 INFO    MainThread:1161562 [wandb_init.py:init():670] setting up manager
+2025-07-01 17:58:07,878 INFO    MainThread:1161562 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-07-01 17:58:07,880 INFO    MainThread:1161562 [wandb_init.py:init():678] backend started and connected
+2025-07-01 17:58:07,890 INFO    MainThread:1161562 [wandb_init.py:init():773] updated telemetry
+2025-07-01 17:58:07,890 INFO    MainThread:1161562 [wandb_init.py:init():806] communicating run to backend with 90.0 second timeout
+2025-07-01 17:58:08,109 INFO    MainThread:1161562 [wandb_init.py:init():857] starting run threads in backend
+2025-07-01 17:58:08,261 INFO    MainThread:1161562 [wandb_run.py:_console_start():2459] atexit reg
+2025-07-01 17:58:08,261 INFO    MainThread:1161562 [wandb_run.py:_redirect():2307] redirect: wrap_raw
+2025-07-01 17:58:08,261 INFO    MainThread:1161562 [wandb_run.py:_redirect():2372] Wrapping output streams.
+2025-07-01 17:58:08,261 INFO    MainThread:1161562 [wandb_run.py:_redirect():2397] Redirects installed.
+2025-07-01 17:58:08,264 INFO    MainThread:1161562 [wandb_init.py:init():900] run started, returning control to user process
+2025-07-01 17:58:08,265 INFO    MainThread:1161562 [wandb_run.py:_config_callback():1388] config_cb None None {'batch_size': 256, 'epochs': 300, 'accum_iter': 96, 'model_type': 'sat_sv_inf', 'model': 'vit_base_patch16_dec512d8b_liif', 'input_size': 96, 'patch_size': 8, 'input_sv_size': 224, 'len_sv': 32, 'mask_ratio': 0.75, 'spatial_mask': True, 'pretrained_sat_encoder': '/satmae_pretrained_checkpoint/pretrain-vit-base-e199.pth', 'imagenet_initialized': False, 'freeze_sat_encoder': True, 'norm_pix_loss': False, 'weight_decay': 0.05, 'lr': 0.000288, 'blr': 1.5e-06, 'min_lr': 1e-14, 'warmup_epochs': 10, 'train_path': '/home/train_62classes.csv', 'dataset_type': 'sentinel_sv_inf', 'repeat': 2, 'masked_bands': None, 'dropped_bands': [0, 9, 10], 'grouped_bands': [], 'output_dir': '', 'log_dir': '.\\log', 'device': 'cuda', 'seed': 0, 'resume': '', 'wandb': 'sat_sv', 'start_epoch': 0, 'num_workers': 32, 'pin_mem': True, 'world_size': 2, 'local_rank': 0, 'dist_on_itp': False, 'dist_url': 'env://', 'rank': 0, 'gpu': 0, 'distributed': True, 'dist_backend': 'gloo'}
+2025-07-01 17:58:08,266 INFO    MainThread:1161562 [wandb_watch.py:watch():51] Watching

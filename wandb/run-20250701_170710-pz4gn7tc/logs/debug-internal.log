@@ -1,0 +1,21 @@
+{"time":"2025-07-01T17:07:10.044547683-05:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2025-07-01T17:07:10.044565934-05:00","level":"INFO","msg":"created symlink","path":"/home/zl22853/code/GAIR/wandb/run-20250701_170710-pz4gn7tc/logs/debug-core.log"}
+{"time":"2025-07-01T17:07:10.044617643-05:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2025-07-01T17:07:10.044623471-05:00","level":"INFO","msg":"created symlink","path":"/home/zl22853/code/GAIR/wandb/run-20250701_170710-pz4gn7tc/logs/debug-core.log"}
+{"time":"2025-07-01T17:07:10.047850275-05:00","level":"INFO","msg":"created new stream","id":"pz4gn7tc"}
+{"time":"2025-07-01T17:07:10.047867984-05:00","level":"INFO","msg":"stream: started","id":"pz4gn7tc"}
+{"time":"2025-07-01T17:07:10.047896821-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"pz4gn7tc"}}
+{"time":"2025-07-01T17:07:10.047978303-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"pz4gn7tc"}}
+{"time":"2025-07-01T17:07:10.047952967-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"pz4gn7tc"}}
+{"time":"2025-07-01T17:07:10.421165576-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2025-07-01T17:07:10.423664679-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-01T17:07:12.448269837-05:00","level":"INFO","msg":"stream: closing","id":"pz4gn7tc"}
+{"time":"2025-07-01T17:07:12.44831011-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-01T17:07:12.448739154-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-01T17:07:12.531584828-05:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-07-01T17:07:12.531614548-05:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-07-01T17:07:12.531628367-05:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-07-01T17:07:12.932928801-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"pz4gn7tc"}}
+{"time":"2025-07-01T17:07:12.932991132-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"pz4gn7tc"}}
+{"time":"2025-07-01T17:07:12.933017601-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"pz4gn7tc"}}
+{"time":"2025-07-01T17:07:12.933095405-05:00","level":"INFO","msg":"stream: closed","id":"pz4gn7tc"}

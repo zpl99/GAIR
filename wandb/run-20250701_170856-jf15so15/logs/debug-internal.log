@@ -1,0 +1,21 @@
+{"time":"2025-07-01T17:08:56.672342883-05:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2025-07-01T17:08:56.672374259-05:00","level":"INFO","msg":"created symlink","path":"/home/zl22853/code/GAIR/wandb/run-20250701_170856-jf15so15/logs/debug-core.log"}
+{"time":"2025-07-01T17:08:56.672462443-05:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2025-07-01T17:08:56.672473693-05:00","level":"INFO","msg":"created symlink","path":"/home/zl22853/code/GAIR/wandb/run-20250701_170856-jf15so15/logs/debug-core.log"}
+{"time":"2025-07-01T17:08:56.678117996-05:00","level":"INFO","msg":"created new stream","id":"jf15so15"}
+{"time":"2025-07-01T17:08:56.678162001-05:00","level":"INFO","msg":"stream: started","id":"jf15so15"}
+{"time":"2025-07-01T17:08:56.67830409-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"jf15so15"}}
+{"time":"2025-07-01T17:08:56.678407669-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"jf15so15"}}
+{"time":"2025-07-01T17:08:56.678225096-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"jf15so15"}}
+{"time":"2025-07-01T17:08:56.89696856-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2025-07-01T17:08:56.899517454-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-01T17:12:01.656290032-05:00","level":"INFO","msg":"stream: closing","id":"jf15so15"}
+{"time":"2025-07-01T17:12:01.656357826-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-01T17:12:01.656969456-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-01T17:12:01.71765622-05:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-07-01T17:12:01.717705203-05:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-07-01T17:12:01.717718119-05:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-07-01T17:12:02.05700341-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"jf15so15"}}
+{"time":"2025-07-01T17:12:02.057118349-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"jf15so15"}}
+{"time":"2025-07-01T17:12:02.057142673-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"jf15so15"}}
+{"time":"2025-07-01T17:12:02.057237677-05:00","level":"INFO","msg":"stream: closed","id":"jf15so15"}

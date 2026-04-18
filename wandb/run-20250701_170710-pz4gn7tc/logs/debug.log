@@ -1,0 +1,28 @@
+2025-07-01 17:07:10,037 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Current SDK version is 0.18.1
+2025-07-01 17:07:10,037 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Configure stats pid to 1151681
+2025-07-01 17:07:10,037 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Loading settings from /home/zl22853/.config/wandb/settings
+2025-07-01 17:07:10,037 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Loading settings from /home/zl22853/code/GAIR/wandb/settings
+2025-07-01 17:07:10,037 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Loading settings from environment variables: {}
+2025-07-01 17:07:10,037 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Applying setup settings: {'mode': None, '_disable_service': None}
+2025-07-01 17:07:10,037 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Inferring run settings from compute environment: {'program_relpath': 'main_pretrain.py', 'program_abspath': '/home/zl22853/code/GAIR/main_pretrain.py', 'program': '/home/zl22853/code/GAIR/main_pretrain.py'}
+2025-07-01 17:07:10,038 INFO    MainThread:1151681 [wandb_setup.py:_flush():77] Applying login settings: {}
+2025-07-01 17:07:10,038 INFO    MainThread:1151681 [wandb_init.py:_log_setup():532] Logging user logs to /home/zl22853/code/GAIR/wandb/run-20250701_170710-pz4gn7tc/logs/debug.log
+2025-07-01 17:07:10,038 INFO    MainThread:1151681 [wandb_init.py:_log_setup():533] Logging internal logs to /home/zl22853/code/GAIR/wandb/run-20250701_170710-pz4gn7tc/logs/debug-internal.log
+2025-07-01 17:07:10,038 INFO    MainThread:1151681 [wandb_init.py:init():616] calling init triggers
+2025-07-01 17:07:10,038 INFO    MainThread:1151681 [wandb_init.py:init():623] wandb.init called with sweep_config: {}
+config: {}
+2025-07-01 17:07:10,038 INFO    MainThread:1151681 [wandb_init.py:init():666] starting backend
+2025-07-01 17:07:10,038 INFO    MainThread:1151681 [wandb_init.py:init():670] setting up manager
+2025-07-01 17:07:10,041 INFO    MainThread:1151681 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-07-01 17:07:10,043 INFO    MainThread:1151681 [wandb_init.py:init():678] backend started and connected
+2025-07-01 17:07:10,051 INFO    MainThread:1151681 [wandb_init.py:init():773] updated telemetry
+2025-07-01 17:07:10,052 INFO    MainThread:1151681 [wandb_init.py:init():806] communicating run to backend with 90.0 second timeout
+2025-07-01 17:07:10,416 INFO    MainThread:1151681 [wandb_init.py:init():857] starting run threads in backend
+2025-07-01 17:07:10,586 INFO    MainThread:1151681 [wandb_run.py:_console_start():2459] atexit reg
+2025-07-01 17:07:10,586 INFO    MainThread:1151681 [wandb_run.py:_redirect():2307] redirect: wrap_raw
+2025-07-01 17:07:10,586 INFO    MainThread:1151681 [wandb_run.py:_redirect():2372] Wrapping output streams.
+2025-07-01 17:07:10,586 INFO    MainThread:1151681 [wandb_run.py:_redirect():2397] Redirects installed.
+2025-07-01 17:07:10,590 INFO    MainThread:1151681 [wandb_init.py:init():900] run started, returning control to user process
+2025-07-01 17:07:10,590 INFO    MainThread:1151681 [wandb_run.py:_config_callback():1388] config_cb None None {'batch_size': 256, 'epochs': 300, 'accum_iter': 96, 'model_type': 'sat_sv_inf', 'model': 'vit_base_patch16_dec512d8b_liif', 'input_size': 96, 'patch_size': 8, 'input_sv_size': 224, 'len_sv': 32, 'mask_ratio': 0.75, 'spatial_mask': True, 'pretrained_sat_encoder': '/satmae_pretrained_checkpoint/pretrain-vit-base-e199.pth', 'imagenet_initialized': False, 'freeze_sat_encoder': True, 'norm_pix_loss': False, 'weight_decay': 0.05, 'lr': 0.000144, 'blr': 1.5e-06, 'min_lr': 1e-14, 'warmup_epochs': 10, 'train_path': '/home/train_62classes.csv', 'dataset_type': 'sentinel_sv_inf', 'repeat': 2, 'masked_bands': None, 'dropped_bands': [0, 9, 10], 'grouped_bands': [], 'output_dir': '', 'log_dir': '.\\log', 'device': 'cuda', 'seed': 0, 'resume': '', 'wandb': 'sat_sv', 'start_epoch': 0, 'num_workers': 32, 'pin_mem': True, 'world_size': 1, 'local_rank': 0, 'dist_on_itp': False, 'dist_url': 'env://', 'distributed': False}
+2025-07-01 17:07:10,591 INFO    MainThread:1151681 [wandb_watch.py:watch():51] Watching
+2025-07-01 17:07:12,448 WARNING MsgRouterThr:1151681 [router.py:message_loop():77] message_loop has been closed

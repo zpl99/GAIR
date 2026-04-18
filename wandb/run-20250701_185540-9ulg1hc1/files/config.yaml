@@ -1,0 +1,122 @@
+_wandb:
+    value:
+        cli_version: 0.18.1
+        m: []
+        python_version: 3.11.9
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 55
+                - 63
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 55
+                - 63
+            "3":
+                - 1
+                - 13
+                - 23
+                - 55
+            "4": 3.11.9
+            "5": 0.18.1
+            "6": 4.45.1
+            "8":
+                - 5
+            "12": 0.18.1
+            "13": linux-x86_64
+accum_iter:
+    value: 1
+basemodel:
+    value: vit_base_patch16
+batch_size:
+    value: 128
+benchmark:
+    value: street_view_liif
+blr:
+    value: 0.001
+clip_grad:
+    value: null
+dataset_type:
+    value: perception
+device:
+    value: cuda
+dist_eval:
+    value: false
+dist_on_itp:
+    value: false
+dist_url:
+    value: env://
+distributed:
+    value: false
+epochs:
+    value: 50
+eval:
+    value: false
+finetune:
+    value: /data/zeping_data/data/gsv_rs_project/nerf_style_pretrained_checkpoint/nerf_liif_2m_with_loc_with_distillation/checkpoint-155.pth
+finetune_type:
+    value: finetune_adapter
+global_pool:
+    value: true
+input_size:
+    value: 96
+input_sv_size:
+    value: 224
+layer_decay:
+    value: 0.75
+local_rank:
+    value: 0
+log_dir:
+    value: /data/zeping_data/data/gsv_rs_project/streetview_liif_finetune_log
+lr:
+    value: 0.0005
+min_lr:
+    value: 1e-06
+multi_model:
+    value: false
+nb_classes:
+    value: 62
+num_workers:
+    value: 32
+output_dir:
+    value: /data/zeping_data/data/gsv_rs_project/perception/temp
+patch_size:
+    value: 16
+pin_mem:
+    value: true
+recount:
+    value: 1
+remode:
+    value: pixel
+reprob:
+    value: 0.25
+resplit:
+    value: false
+resume:
+    value: ""
+save_every:
+    value: 1
+start_epoch:
+    value: 0
+test_path:
+    value: /data/zeping_data/data/gsv_rs_project/street_scapes/perception_task/test_perception.csv
+train_path:
+    value: /data/zeping_data/data/gsv_rs_project/street_scapes/perception_task/train_perception.csv
+wandb:
+    value: sat_sv_finetune_perception
+warmup_epochs:
+    value: 5
+weight_decay:
+    value: 0.05
+world_size:
+    value: 1
