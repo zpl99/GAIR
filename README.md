@@ -12,12 +12,6 @@ This repository currently releases the **inference code** for GAIR. At this stag
 
 The **pretraining dataset** and **pretraining code** are still being organized and will be released later.
 
-## Method Overview
-
-![GAIR method overview](assets/figure2_method.png)
-
-Figure 2 from the paper: GAIR architecture and the NILI module.
-
 ## Repository Status
 
 - `Inference`: available now
