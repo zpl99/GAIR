@@ -1,0 +1,7 @@
+einops>=0.8
+numpy>=1.24
+Pillow>=10.0
+pyproj>=3.6
+rasterio>=1.3
+torch>=2.3
+transformers>=4.40

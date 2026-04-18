@@ -1,4 +1,14 @@
 .codex
+__pycache__/
+*.py[cod]
 *.pt
+*.pth
+*.ckpt
+*.bin
 *.json
 *.npy
+*.npz
+*.log
+outputs/
+wandb/
+paper/

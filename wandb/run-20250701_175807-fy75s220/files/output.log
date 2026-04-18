@@ -1,8 +1,0 @@
-[17:58:08.274742] Start training for 300 epochs
-[17:58:08.278841] log_dir: .\log
-/home/zl22853/code/GAIR/engine_pretrain.py:116: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
-  with torch.cuda.amp.autocast():
-/home/zl22853/.conda/envs/lzp/lib/python3.11/site-packages/torch/functional.py:513: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /opt/conda/conda-bld/pytorch_1720538435607/work/aten/src/ATen/native/TensorShape.cpp:3609.)
-  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
-[18:00:01.373584] Epoch: [0]  [   0/1953]  eta: 2 days, 13:21:08  lr: 0.000000  loss: 13.9809 (13.9809)  time: 113.0920  data: 105.3801  max mem: 40701
-[18:00:48.243454] Epoch: [0]  [  20/1953]  eta: 4:05:23  lr: 0.000000  loss: 13.9817 (13.9827)  time: 2.3431  data: 0.1041  max mem: 41369
