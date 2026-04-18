@@ -98,6 +98,19 @@ The script exports:
 - `rs_embedding_from_query.npy`
 - `summary.json`
 
+## Retrieval Demo
+
+A tiny localized RS-to-street-view retrieval demo is included in [examples/rs_to_sv_retrieval/README.md](examples/rs_to_sv_retrieval/README.md).
+
+Run:
+
+```bash
+python scripts/demo_localized_rs_to_sv_retrieval.py \
+  --checkpoint path/to/checkpoint.pth
+```
+
+This demo uses 3 remote sensing queries and 3 street-view gallery images bundled in the repository, and saves one preview image per query under `outputs/rs_to_sv_retrieval_demo/`.
+
 ## Input Conventions
 
 - RS crop bbox order: `[lon_min, lat_max, lon_max, lat_min]`
