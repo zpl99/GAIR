@@ -21,16 +21,21 @@ The **pretraining dataset** and **pretraining code** are still being organized a
 
 ## Installation
 
-We recommend creating a fresh environment first.
+The commands below assume a Linux machine with an NVIDIA GPU and a working CUDA-capable driver. The current release was validated with `torch 2.3.0 + cu118` and `transformers 4.41.0`.
 
 ```bash
 conda create -n gair python=3.10 -y
 conda activate gair
-pip install --upgrade pip
+python -m pip install --upgrade pip
+pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 \
+  --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
+python -c "import torch; print(torch.__version__); print(torch.version.cuda); print(torch.cuda.is_available())"
 ```
 
-For GPU inference, install a CUDA-compatible PyTorch build that matches your system. If needed, please follow the official PyTorch installation guide before running `pip install -r requirements.txt`.
+`torch.cuda.is_available()` should print `True`.
+
+If you need a different CUDA wheel, replace only the PyTorch install command above and keep the remaining steps unchanged.
 
 ## Checkpoints
 
