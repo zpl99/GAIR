@@ -36,7 +36,6 @@ For GPU inference, install a CUDA-compatible PyTorch build that matches your sys
 
 - GAIR checkpoint: `TODO`
 
-The released GAIR checkpoint is **self-contained** for inference. You do **not** need separate `CROMA_base.pt` or standalone location-encoder weights.
 
 ## Quick Start
 
@@ -47,7 +46,7 @@ import torch
 
 from gair import GAIRModel, load_rs_image, load_sv_image, preprocess_rs_array, preprocess_sv_array
 
-checkpoint = "path/to/checkpoint-144.pth"
+checkpoint = "path/to/checkpoint.pth"
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 model = GAIRModel.from_checkpoint(checkpoint, device=device, query_mode="nili")
@@ -74,7 +73,7 @@ with torch.inference_mode():
 
 ```bash
 python scripts/extract_embeddings.py \
-  --checkpoint path/to/checkpoint-144.pth \
+  --checkpoint path/to/checkpoint \
   --rs-image path/to/rs_crop.tif \
   --sv-image path/to/street_view.jpg \
   --lon 116.397 \
@@ -108,14 +107,6 @@ The script exports:
 - `nili`: learned NILI query used by GAIR
 - `bilinear`: deterministic interpolation baseline
 - `bicubic`: deterministic interpolation baseline
-
-## Smoke Test
-
-```bash
-python tests/smoke_test.py --checkpoint path/to/checkpoint-144.pth
-```
-
-This verifies checkpoint loading and runs RS / SV / location / localized RS forward paths.
 
 ## Citation
 
