@@ -17,7 +17,7 @@ The **pretraining dataset** and **pretraining code** are still being organized a
 - `Inference`: available now
 - `Pretraining dataset`: coming later
 - `Pretraining code`: coming later
-- `Checkpoint link`: `TODO`
+- `Checkpoint link`: [`PingL/GAIR` on Hugging Face](https://huggingface.co/PingL/GAIR)
 
 ## Installation
 
@@ -37,10 +37,6 @@ python -c "import torch; print(torch.__version__); print(torch.version.cuda); pr
 
 If you need a different CUDA wheel, replace only the PyTorch install command above and keep the remaining steps unchanged.
 
-## Checkpoints
-
-- GAIR checkpoint: `TODO`
-
 
 ## Quick Start
 
@@ -49,9 +45,10 @@ If you need a different CUDA wheel, replace only the PyTorch install command abo
 ```python
 import torch
 
+from huggingface_hub import hf_hub_download
 from gair import GAIRModel, load_rs_image, load_sv_image, preprocess_rs_array, preprocess_sv_array
 
-checkpoint = "path/to/checkpoint.pth"
+checkpoint = hf_hub_download(repo_id="PingL/GAIR", filename="checkpoint.pth")
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 model = GAIRModel.from_checkpoint(checkpoint, device=device, query_mode="nili")
@@ -77,8 +74,10 @@ with torch.inference_mode():
 ### Command Line Inference
 
 ```bash
+CHECKPOINT=$(hf download PingL/GAIR checkpoint.pth)
+
 python scripts/extract_embeddings.py \
-  --checkpoint path/to/checkpoint \
+  --checkpoint "$CHECKPOINT" \
   --rs-image path/to/rs_crop.tif \
   --sv-image path/to/street_view.jpg \
   --lon 116.397 \
@@ -105,8 +104,10 @@ A tiny localized RS-to-street-view retrieval demo is included in [examples/rs_to
 Run:
 
 ```bash
+CHECKPOINT=$(hf download PingL/GAIR checkpoint.pth)
+
 python scripts/demo_localized_rs_to_sv_retrieval.py \
-  --checkpoint path/to/checkpoint.pth
+  --checkpoint "$CHECKPOINT"
 ```
 
 This demo uses 3 remote sensing queries and 3 street-view gallery images bundled in the repository, and saves one preview image per query under `outputs/rs_to_sv_retrieval_demo/`.
