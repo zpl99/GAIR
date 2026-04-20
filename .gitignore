@@ -12,4 +12,4 @@ __pycache__/
 outputs/
 wandb/
 paper/
-gair-isprs/*
+gair-isprs/
