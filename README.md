@@ -2,7 +2,7 @@
 
 GAIR is a location-aware self-supervised pre-training framework for learning geo-aligned representations from remote sensing imagery, street-view imagery, and geographic coordinates.
 
-This repository currently releases the **inference code** for GAIR. At this stage, the public release focuses on:
+This repository currently releases the **inference code** for GAIR. This repo includes
 
 - loading the pretrained GAIR checkpoint
 - extracting **remote sensing (RS)** embeddings
@@ -13,8 +13,6 @@ This repository currently releases the **inference code** for GAIR. At this stag
 The **pretraining dataset** and **pretraining code** are still being organized and will be released later.
 
 ## Installation
-
-The commands below assume a Linux machine with an NVIDIA GPU and a working CUDA-capable driver. The current release was validated with `torch 2.3.0 + cu118` and `transformers 4.41.0`.
 
 ```bash
 conda create -n gair python=3.10 -y
@@ -49,7 +47,7 @@ model = GAIRModel.from_checkpoint(checkpoint, device=device, query_mode="nili")
 rs = preprocess_rs_array(load_rs_image("path/to/rs_crop.tif")).to(device)
 sv = preprocess_sv_array(load_sv_image("path/to/street_view.jpg")).to(device)
 coords = torch.tensor([[116.397, 39.908]], device=device)  # [lon, lat]
-bbox = torch.tensor([[116.387, 39.918, 116.407, 39.898]], device=device)  # [lon_min, lat_max, lon_max, lat_min]
+bbox = torch.tensor([[116.387, 39.918, 116.407, 39.898]], device=device)  # bbox of the rs image, [lon_min, lat_max, lon_max, lat_min]
 
 with torch.inference_mode():
     rs_embedding = model.encode_rs(rs, normalize=True)
