@@ -12,13 +12,6 @@ This repository currently releases the **inference code** for GAIR. At this stag
 
 The **pretraining dataset** and **pretraining code** are still being organized and will be released later.
 
-## Repository Status
-
-- `Inference`: available now
-- `Pretraining dataset`: coming later
-- `Pretraining code`: coming later
-- `Checkpoint link`: [`PingL/GAIR` on Hugging Face](https://huggingface.co/PingL/GAIR)
-
 ## Installation
 
 The commands below assume a Linux machine with an NVIDIA GPU and a working CUDA-capable driver. The current release was validated with `torch 2.3.0 + cu118` and `transformers 4.41.0`.
