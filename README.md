@@ -108,9 +108,9 @@ This demo uses 3 remote sensing queries and 3 street-view gallery images bundled
 - RS crop bbox order: `[lon_min, lat_max, lon_max, lat_min]`
 - Coordinate order: `[lon, lat]`
 - `--rs-image` should already be the RS crop corresponding to `--rs-bbox`
-- RS inputs can be:
-  - 10-band Sentinel-2 crops already matching GAIR input bands
-  - 12/13-band arrays or GeoTIFFs, in which case bands `[1,2,3,4,5,6,7,8,10,11]` are kept
+- RS inputs should be 10-band Sentinel-2 image (B2, B3, B4, B5, B6, B7, B8, B8A, B11, B12).
+
+
 
 ## Query Modes
 
@@ -120,4 +120,4 @@ This demo uses 3 remote sensing queries and 3 street-view gallery images bundled
 
 ## Citation
 
-The citation entry will be added after the paper is officially released.
+The citation entry will be added after the paper is officially published.
