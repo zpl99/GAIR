@@ -1,0 +1,4 @@
+id,rs_image,sv_image,lon,lat,rs_bbox_lon_min,rs_bbox_lat_max,rs_bbox_lon_max,rs_bbox_lat_min
+detroit,examples/rs_to_sv_retrieval/queries/detroit_rs.tif,examples/rs_to_sv_retrieval/gallery/detroit_sv.jpg,-83.258332,42.482289,-83.2764319522036,42.4883366452283,-83.25433339621425,42.47207713858574
+sacramento,examples/rs_to_sv_retrieval/queries/sacramento_rs.tif,examples/rs_to_sv_retrieval/gallery/sacramento_sv.jpg,-121.474012,38.570138,-121.48690138292632,38.58255162140504,-121.46480282693697,38.565303967949944
+tokyo,examples/rs_to_sv_retrieval/queries/tokyo_rs.tif,examples/rs_to_sv_retrieval/gallery/tokyo_sv.jpg,139.75009,35.657349,139.7460578479397,35.675154204352204,139.76806657240064,35.657277730198224

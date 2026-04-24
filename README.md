@@ -53,7 +53,7 @@ with torch.inference_mode():
     rs_embedding = model.encode_rs(rs, normalize=True)
     sv_embedding = model.encode_sv(sv, normalize=True)
     loc_embedding = model.encode_location(coords, normalize=True)
-    rs_global, localized_rs_embedding = model.query_localized_rs(
+    _, localized_rs_embedding = model.query_localized_rs(
         rs,
         coords,
         bbox,
@@ -85,8 +85,21 @@ The script exports:
 - `sv_embedding.npy`
 - `loc_embedding.npy`
 - `localized_rs_embedding.npy`
-- `rs_embedding_from_query.npy`
-- `summary.json`
+
+## Embedding Examples
+
+Bundled satellite, street-view, and geolocation examples are provided in [examples/extract_embeddings](examples/extract_embeddings).
+
+Run:
+
+```bash
+CHECKPOINT=$(hf download PingL/GAIR checkpoint.pth)
+
+python scripts/demo_extract_example_embeddings.py \
+  --checkpoint "$CHECKPOINT"
+```
+
+This saves RS, SV, location, and localized RS embeddings for each bundled example under `outputs/example_embeddings/`.
 
 ## Retrieval Demo
 

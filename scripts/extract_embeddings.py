@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from pathlib import Path
 
@@ -67,14 +66,7 @@ def main() -> None:
         query_mode=args.query_mode,
     )
 
-    summary: dict[str, object] = {
-        "checkpoint": str(args.checkpoint.resolve()),
-        "device": str(device),
-        "query_mode": args.query_mode,
-        "normalize": args.normalize,
-        "outputs": {},
-        "load_info": getattr(model, "load_info", {}),
-    }
+    saved_outputs: list[tuple[str, Path, list[int]]] = []
 
     rs_tensor = None
     coord_tensor = None
@@ -86,14 +78,14 @@ def main() -> None:
             rs_tensor = preprocess_rs_array(rs_array).to(device=device, dtype=torch.float32)
             rs_embedding = model.encode_rs(rs_tensor, normalize=args.normalize)
             out_path = output_dir / "rs_embedding.npy"
-            summary["outputs"]["rs_embedding"] = {"path": str(out_path), "shape": save_embedding(out_path, rs_embedding)}
+            saved_outputs.append(("rs_embedding", out_path, save_embedding(out_path, rs_embedding)))
 
         if args.sv_image is not None:
             sv_array = load_sv_image(args.sv_image)
             sv_tensor = preprocess_sv_array(sv_array).to(device=device, dtype=torch.float32)
             sv_embedding = model.encode_sv(sv_tensor, normalize=args.normalize)
             out_path = output_dir / "sv_embedding.npy"
-            summary["outputs"]["sv_embedding"] = {"path": str(out_path), "shape": save_embedding(out_path, sv_embedding)}
+            saved_outputs.append(("sv_embedding", out_path, save_embedding(out_path, sv_embedding)))
 
         if args.lon is not None or args.lat is not None:
             if args.lon is None or args.lat is None:
@@ -101,13 +93,13 @@ def main() -> None:
             coord_tensor = torch.tensor([[args.lon, args.lat]], device=device, dtype=torch.float32)
             loc_embedding = model.encode_location(coord_tensor, normalize=args.normalize)
             out_path = output_dir / "loc_embedding.npy"
-            summary["outputs"]["loc_embedding"] = {"path": str(out_path), "shape": save_embedding(out_path, loc_embedding)}
+            saved_outputs.append(("loc_embedding", out_path, save_embedding(out_path, loc_embedding)))
 
         if args.rs_bbox is not None:
             bbox_tensor = torch.tensor([args.rs_bbox], device=device, dtype=torch.float32)
 
         if rs_tensor is not None and coord_tensor is not None and bbox_tensor is not None:
-            rs_global, localized = model.query_localized_rs(
+            _, localized = model.query_localized_rs(
                 rs_tensor,
                 coord_tensor,
                 bbox_tensor,
@@ -115,20 +107,10 @@ def main() -> None:
                 normalize=args.normalize,
             )
             out_path = output_dir / "localized_rs_embedding.npy"
-            summary["outputs"]["localized_rs_embedding"] = {
-                "path": str(out_path),
-                "shape": save_embedding(out_path, localized),
-            }
-            out_path = output_dir / "rs_embedding_from_query.npy"
-            summary["outputs"]["rs_embedding_from_query"] = {
-                "path": str(out_path),
-                "shape": save_embedding(out_path, rs_global),
-            }
+            saved_outputs.append(("localized_rs_embedding", out_path, save_embedding(out_path, localized)))
 
-    summary_path = output_dir / "summary.json"
-    with open(summary_path, "w", encoding="utf-8") as f:
-        json.dump(summary, f, ensure_ascii=False, indent=2)
-    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    for name, path, shape in saved_outputs:
+        print(f"{name}: {path} shape={shape}")
 
 
 if __name__ == "__main__":
