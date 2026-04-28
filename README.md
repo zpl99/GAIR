@@ -133,4 +133,12 @@ This demo uses 3 remote sensing queries and 3 street-view gallery images bundled
 
 ## Citation
 
-The citation entry will be added after the paper is officially published.
+@article{liu2026gair,
+  title={GAIR: Location-aware self-supervised contrastive pre-training with geo-aligned implicit representations},
+  author={Liu, Zeping and Lao, Ni and Wang, Zhangyu and Jiao, Junfeng and Mai, Gengchen},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={237},
+  pages={166--182},
+  year={2026},
+  publisher={Elsevier}
+}
